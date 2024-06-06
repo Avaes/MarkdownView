@@ -18,13 +18,7 @@ let markdown = new MarkdownIt({
 const postDocumentHeight = () => {
   var _body = document.body;
   var _html = document.documentElement;
-  var height = Math.max(
-    _body.scrollHeight,
-    _body.offsetHeight,
-    _html.clientHeight,
-    _html.scrollHeight,
-    _html.offsetHeight
-  );
+  var height = _html.offsetHeight;
   console.log(height)
   window?.webkit?.messageHandlers?.updateHeight?.postMessage(height);
 };
